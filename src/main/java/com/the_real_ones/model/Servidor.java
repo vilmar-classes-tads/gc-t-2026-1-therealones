@@ -2,6 +2,14 @@ package com.the_real_ones.model;
 
 public class Servidor {
 
+    public enum Sexo {
+        HOMEM_CIS,
+        MULHER_CIS,
+        HOMEM_TRANS,
+        MULHER_TRANS,
+        OUTRO
+    }
+
     // Atributos obrigatórios
     private String nomeCompleto = "";
     private String cpf = "";
@@ -12,7 +20,7 @@ public class Servidor {
 
     // Atributos opcionais
     private String nomeSocial = "";
-    private String[] sexo = new String[]{"Homem-cis", "Mulher-cis", "Homem-trans", "Mulher-trans", "Outro"};
+    private Sexo sexo;
     private String URLLattes = "";
     private String telefone = "";
 
@@ -25,6 +33,8 @@ public class Servidor {
         this.titulacao = titulacao;
     }
 
+
+
     public String getNomeCompleto() {
         return nomeCompleto;
     }
@@ -35,10 +45,6 @@ public class Servidor {
 
     public String getCpf() {
         return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
     }
 
     public String getCampus() {
@@ -81,8 +87,12 @@ public class Servidor {
         this.nomeSocial = nomeSocial;
     }
 
-    public String[] getSexo() {
+    public Sexo getSexo() {
         return sexo;
+    }
+
+    public void setSexo(Sexo sexo) {
+        this.sexo = sexo;
     }
 
     public String getURLLattes() {
