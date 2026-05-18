@@ -22,7 +22,7 @@ public class Servidor {
     private String nomeSocial = "";
     private Sexo sexo;
     private String URLLattes = "";
-    private String telefone = "";
+    private String telefone = ""
 
     public Servidor(String nomeCompleto, String cpf, String emailInstitucional, String areaFormacao, String campus, String titulacao) {
         this.nomeCompleto = nomeCompleto;
