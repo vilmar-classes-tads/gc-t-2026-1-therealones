@@ -23,4 +23,18 @@ public class ServidorService {
         repository.create(servidor);
         return true;
     }
+
+    public Servidor login(String email, String senha) {
+         Servidor servidor = repository.readByEmail(email);
+
+        if(servidor == null) {
+            throw new IllegalArgumentException("E-mail não encontrado");
+        }
+
+        if(!servidor.verificarSenha(senha)) {
+            throw new IllegalArgumentException("Senha incorreta");
+        }
+
+        return servidor;
+    }
 }

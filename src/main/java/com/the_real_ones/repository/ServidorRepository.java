@@ -21,6 +21,16 @@ public class ServidorRepository {
         return null;
     }
 
+    public Servidor readByEmail(String email) {
+        for(Servidor s : servidores) {
+            if(s.getEmailInstitucional().equals(email)) {
+                return s;
+            }
+        }
+
+        return null;
+    }
+
     public void update(Servidor s) {
         for(Servidor serv : servidores) {
             if(serv.getCpf().equals(s.getCpf())) {
