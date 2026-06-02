@@ -21,6 +21,9 @@ public class ServidorService {
         }
 
         repository.create(servidor);
+
+        System.out.println("\nCadastro concluído com sucesso");
+
         return true;
     }
 

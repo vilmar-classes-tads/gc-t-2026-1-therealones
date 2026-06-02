@@ -9,6 +9,8 @@ public class ServidorRepository {
     private final ArrayList<Servidor> servidores = new ArrayList<>();
 
     public void create(Servidor s) {
+        s.adicionarPerfil("ROLE_AVALIADOR");
+        s.adicionarPerfil("ROLE_COORDENADOR");
         servidores.add(s);
     }
 

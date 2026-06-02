@@ -2,6 +2,8 @@ package com.the_real_ones.model;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Servidor {
 
@@ -21,6 +23,8 @@ public class Servidor {
     private String areaFormacao = "";
     private String titulacao = "";
     private String senhaHash = "";
+    private List<String> perfil = new ArrayList<>();
+    
 
     // Atributos opcionais
     private String nomeSocial = "";
@@ -144,5 +148,13 @@ public class Servidor {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+    
+    public List<String> getPerfil(){
+        return this.perfil;
+    }
+
+    public void adicionarPerfil(String perfil){
+        this.perfil.add(perfil);
     }
 }
