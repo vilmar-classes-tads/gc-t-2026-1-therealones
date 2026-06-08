@@ -1,6 +1,6 @@
 package com.the_real_ones.model;
 
-public class projeto{
+public class Projeto{
     public enum Ods {
         ODS1,
         ODS2,
@@ -27,7 +27,7 @@ public class projeto{
     }
     
     private String titulo;
-    private String Resumo;
+    private String resumo;
     private String palavraChave;
     private String publicoAlvo;
     private String areaTematica;
@@ -95,11 +95,11 @@ public class projeto{
         this.campos = campos;
     }
 
-    public ODS getOds() {
+    public Ods getOds() {
         return ods;
     }
 
-    public void setOds(String ods) {
+    public void setOds(Ods ods) {
         this.ods = ods;
     }
 
