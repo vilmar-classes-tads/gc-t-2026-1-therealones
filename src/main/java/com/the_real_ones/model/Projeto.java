@@ -37,14 +37,14 @@ public class projeto{
     public Status status;
 
 
-    public Projeto(String titulo, String resumo, String palavraChave, String publicoAlvo, String areaTematica, String campos, Ods ODS) {
+    public Projeto(String titulo, String resumo, String palavraChave, String publicoAlvo, String areaTematica, String campos, Ods ods) {
         this.titulo = titulo;
         this.resumo = resumo;
         this.palavraChave = palavraChave;
         this.publicoAlvo = publicoAlvo;
         this.areaTematica = areaTematica;
         this.campos = campos;
-        this.ods = ods
+        this.ods = ods;
     }
 
     public String getTitulo() {
@@ -52,7 +52,7 @@ public class projeto{
     }
 
     public void setTitulo(String titulo) {
-        this.titulo = titulo
+        this.titulo = titulo;
     }
 
     public String getResumo() {
