@@ -1,7 +1,7 @@
 package com.the_real_ones.controller;
 
 import com.the_real_ones.model.Projeto;
-import com.the_real_ones.repository.ProjetoRepository; // Supondo que você tenha esse repo
+import com.the_real_ones.repository.ProjetoRepository;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 
