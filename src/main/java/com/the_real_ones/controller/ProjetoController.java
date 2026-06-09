@@ -2,40 +2,36 @@ package com.the_real_ones.controller;
 
 import com.the_real_ones.model.Projeto;
 import com.the_real_ones.repository.ProjetoRepository;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.http.ResponseEntity;
 
-@RestController
-@RequestMapping("/projetos")
 public class ProjetoController {
 
     private final ProjetoRepository repository = new ProjetoRepository();
 
-    @PutMapping("/{id}")
-    public ResponseEntity<String> atualizar(@PathVariable Long id, @RequestBody Projeto dadosNovos) {
-        Projeto projetoExistente = repository.findById(id);
-        
+    public String atualizar(Long id, Projeto dadosNovos) {
+
+        Projeto projetoExistente = repository.read(dadosNovos.getTitulo());
+
         if (projetoExistente == null) {
-            return ResponseEntity.status(404).body("Projeto não encontrado.");
+            return "Projeto não encontrado.";
         }
 
-        try {
-            projetoExistente.editarProjeto(
-                dadosNovos.getTitulo(),
-                dadosNovos.getResumo(),
-                dadosNovos.getPalavraChave(),
-                dadosNovos.getPublicoAlvo(),
-                dadosNovos.getAreaTematica(),
-                dadosNovos.getCampos(),
-                dadosNovos.getOds()
-            );
-
-            repository.update(projetoExistente);
-            
-            return ResponseEntity.ok("Projeto editado com sucesso!");
-
-        } catch (IllegalStateException e) {
-            return ResponseEntity.status(400).body(e.getMessage());
+        if (projetoExistente.getStatus() == Projeto.Status.SUBMETIDO) {
+            return "Não é permitido editar um projeto já submetido.";
         }
+
+        projetoExistente.editarProjeto(
+            dadosNovos.getTitulo(),
+            dadosNovos.getResumo(),
+            dadosNovos.getPalavraChave(),
+            dadosNovos.getPublicoAlvo(),
+            dadosNovos.getAreaTematica(),
+            dadosNovos.getCampos(),
+            dadosNovos.getOds()
+        );
+
+        repository.update(projetoExistente);
+
+        return "Projeto editado com sucesso!";
     }
+
 }

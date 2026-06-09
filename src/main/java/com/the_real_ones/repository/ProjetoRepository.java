@@ -4,46 +4,47 @@ import com.the_real_ones.model.Projeto;
 
 import java.util.ArrayList;
 
-public class ServidorRepository {
+public class ProjetoRepository {
 
-    private final ArrayList<Projeto> projeto = new ArrayList<>();
+private final ArrayList<Projeto> projetos = new ArrayList<>();
 
-    public void create(Projeto s) {
-        projeto.add(s);
-    }
+public void create(Projeto projeto) {
+    projetos.add(projeto);
+}
 
-    public Projeto read(String titulo){
-        for(Projeto p : projeto){
-            if(p.equals(titulo)) {
-                return p;
-            }
-        }
-
-        return null;
-    }
-
-    public void update(Projeto p) {
-        for(Projeto proj : projeto) {
-            if(proj.getTitulo().equals(p.getTitulo())) {
-                proj.setTitulo(p.getTitulo());
-                proj.setResumo(p.getResumo());
-                proj.setPalavraChave(p.getPalavraChave());
-                proj.setPublicoAlvo(p.getPublicoAlvo());
-                proj.setAreaTematica(p.getAreaTematica());
-                proj.setCampos(p.getCampos());
-                proj.setOds(p.getOds());
-
-                return;
-            }
+public Projeto read(String titulo) {
+    for (Projeto projeto : projetos) {
+        if (projeto.getTitulo().equals(titulo)) {
+            return projeto;
         }
     }
 
-    public void delete(Proj p) {
-        projeto.remove(p);
-    }
+    return null;
+}
 
-    public ArrayList<Projeto> readAll() {
-        return  new ArrayList<>(projetos);
+public void update(Projeto projetoAtualizado) {
+    for (Projeto projeto : projetos) {
+        if (projeto.getTitulo().equals(projetoAtualizado.getTitulo())) {
+
+            projeto.setTitulo(projetoAtualizado.getTitulo());
+            projeto.setResumo(projetoAtualizado.getResumo());
+            projeto.setPalavraChave(projetoAtualizado.getPalavraChave());
+            projeto.setPublicoAlvo(projetoAtualizado.getPublicoAlvo());
+            projeto.setAreaTematica(projetoAtualizado.getAreaTematica());
+            projeto.setCampos(projetoAtualizado.getCampos());
+            projeto.setOds(projetoAtualizado.getOds());
+
+            return;
+        }
     }
+}
+
+public void delete(Projeto projeto) {
+    projetos.remove(projeto);
+}
+
+public ArrayList<Projeto> readAll() {
+    return new ArrayList<>(projetos);
+}
 
 }

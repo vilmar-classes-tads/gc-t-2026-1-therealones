@@ -46,6 +46,16 @@ public class Projeto{
         this.campos = campos;
         this.ods = ods;
     }
+    
+    public void editarProjeto(String titulo, String resumo, String palavraChave, String publicoAlvo, String areaTematica, String campos, Ods ods) {
+        this.titulo = titulo;
+        this.resumo = resumo;
+        this.palavraChave = palavraChave;
+        this.publicoAlvo = publicoAlvo;
+        this.areaTematica = areaTematica;
+        this.campos = campos;
+        this.ods = ods;
+    }
 
     public String getTitulo() {
         return titulo;
