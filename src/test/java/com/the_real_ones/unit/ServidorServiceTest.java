@@ -1,4 +1,4 @@
-package test.java.com.the_real_ones.unit;
+package com.the_real_ones.unit;
 
 import com.the_real_ones.model.Servidor;
 import com.the_real_ones.repository.ServidorRepository;
