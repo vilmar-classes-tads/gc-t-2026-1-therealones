@@ -19,15 +19,18 @@ public class ProjetoController {
             return "Não é permitido editar um projeto já submetido.";
         }
 
+        if (projetoExistente.getStatus() != Projeto.Status.CORRECAO) {
+            return "A edição somente é permitida caso o projeto esteja no status de correção.";
+        }
+
         projetoExistente.editarProjeto(
-            dadosNovos.getTitulo(),
-            dadosNovos.getResumo(),
-            dadosNovos.getPalavraChave(),
-            dadosNovos.getPublicoAlvo(),
-            dadosNovos.getAreaTematica(),
-            dadosNovos.getCampos(),
-            dadosNovos.getOds()
-        );
+                dadosNovos.getTitulo(),
+                dadosNovos.getResumo(),
+                dadosNovos.getPalavraChave(),
+                dadosNovos.getPublicoAlvo(),
+                dadosNovos.getAreaTematica(),
+                dadosNovos.getCampos(),
+                dadosNovos.getOds());
 
         repository.update(projetoExistente);
 
