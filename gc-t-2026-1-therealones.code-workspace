@@ -1,0 +1,35 @@
+{
+  "folders": [
+    {
+      "name": "GC-T 2026-1 The Real Ones",
+      "path": "c:/Users/mathe/OneDrive/Documentos/projeto-testes/gc-t-2026-1-therealones"
+    },
+    {
+      "name": "Expoente Frontend",
+      "path": "c:/Users/mathe/OneDrive/Documentos/EXPOENTE_FRONTEND"
+    },
+    {
+      "name": "Expoente Backend",
+      "path": "c:/Users/mathe/OneDrive/Documentos/EXPOENTE_BACKEND"
+    },
+    {
+      "name": "Projeto Lembretes",
+      "path": "d:/projeto-lembretes"
+    },
+    {
+      "name": "Convite",
+      "path": "d:/projeto-convite/Convite"
+    }
+  ],
+  "settings": {
+    "java.import.maven.enabled": true,
+    "java.import.gradle.enabled": false,
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.project.importOnFirstTimeStartup": "automatic",
+    "java.project.sourcePaths": [
+      "src/main/java",
+      "src/test/java"
+    ],
+    "liveServer.settings.multiRootWorkspaceName": "Convite"
+  }
+}
