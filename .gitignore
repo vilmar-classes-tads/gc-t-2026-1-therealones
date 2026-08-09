@@ -30,3 +30,4 @@ replay_pid*
 settings.json
 
 target/
+.code-workspace
