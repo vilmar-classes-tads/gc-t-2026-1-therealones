@@ -22,6 +22,7 @@ public class Servidor {
     private String campus = "";
     private String areaFormacao = "";
     private String titulacao = "";
+    private String senha = "";
     private String senhaHash = "";
     private List<String> perfil = new ArrayList<>();
     
@@ -39,6 +40,7 @@ public class Servidor {
         this.areaFormacao = areaFormacao;
         this.campus = campus;
         this.titulacao = titulacao;
+        this.senha = senha;
         this.senhaHash = gerarHash(senha);
     }
 
@@ -76,6 +78,15 @@ public class Servidor {
 
     public String getNomeCompleto() {
         return nomeCompleto;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+        this.senhaHash = gerarHash(senha);
     }
 
     public void setNomeCompleto(String nomeCompleto) {
