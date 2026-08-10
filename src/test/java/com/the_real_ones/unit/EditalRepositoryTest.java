@@ -21,7 +21,7 @@ public class EditalRepositoryTest {
     }
 
     @Test
-    @DisplayName("CT-04: Listagem de editais retornando a lista vazia quando não há itens cadastrados")
+    @DisplayName("CT-18a: Listagem de editais retornando a lista vazia quando não há itens cadastrados")
     public void testListarEditaisVazio() {
         // Arrange (Setup inicializa repositório vazio)
 
@@ -34,7 +34,7 @@ public class EditalRepositoryTest {
     }
 
     @Test
-    @DisplayName("CT-05: Listagem de editais com sucesso quando existem itens cadastrados")
+    @DisplayName("CT-18b: Listagem de editais com sucesso quando existem itens cadastrados")
     public void testListarEditaisComSucesso() {
         // Arrange
         LocalDate inicioSubmissao = LocalDate.of(2026, 8, 1);
